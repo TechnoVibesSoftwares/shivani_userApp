@@ -1,0 +1,62 @@
+
+
+
+
+<ion-content>
+<div class="back" >
+  
+   
+ 
+  <br>
+
+  <ion-card>
+    <ion-card-title> Sing Up</ion-card-title>
+    <form >
+   
+      <ion-item lines="full">
+        <ion-label position="floating"> User Name</ion-label>
+        <ion-input type="text" name="username" [(ngModel)]="data. username" required></ion-input>
+      </ion-item>
+    <br>
+    <ion-item lines="full">
+      <ion-label position="floating">DOB</ion-label>
+      <ion-input type="date" name="dob" [(ngModel)]="data.dob" required></ion-input> </ion-item
+    >
+    <br>
+    <ion-item lines="full">
+      <ion-label position="floating"> Contact Number </ion-label>
+      <ion-input type="text" name="mobileNo" [(ngModel)]="data.mobileNo" required></ion-input>
+    </ion-item> 
+    <br>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" name="emailId" [(ngModel)]="data.emailId" required></ion-input>
+    </ion-item>
+    <br>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="data.password" required></ion-input>
+    </ion-item>
+    <br>
+
+
+
+ 
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select class="custom-options" interface="popover" name="gender" [(ngModel)]="data.gender">
+        <ion-select-option value="Male" class="brown-option">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+        <ion-select-option value="Unisex">Unisex</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br> 
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="dark" shape="round" (click)="doSubmitForm()" expand="block">signup</ion-button>
+      </ion-col>
+    </ion-row>
+<div class="link">
+    Already have an account ? <a class="login" routerLink="/login" color="dark">LogIn</a></div>
+  </form></ion-card></div>
+</ion-content>

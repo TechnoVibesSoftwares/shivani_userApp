@@ -1,0 +1,27 @@
+.offer{
+    font-size: 25px;
+    font-style: italic;
+
+    background:linear-gradient(120deg, #fc1703,#fc031c,#fcf403,#03fcec,#0317fc,#fc03e3,#fc031c);
+    font-family: sans-serif;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 5s  infinite alternate;
+}
+   
+
+h3{
+    text-align: center;
+}
+ion-card{
+    text-align: center;
+   
+}
+ion-grid{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    --ion-grid-columns: 2;
+}

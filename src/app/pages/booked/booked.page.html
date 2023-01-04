@@ -1,0 +1,103 @@
+<ng-container *ngIf="products.length ==0">
+  <ion-card>
+    <div class="container">
+      <div class="card">
+        <h5 class="card-title">My Cart</h5>
+      </div>
+      <div class="center">
+        <!-- <img
+          src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+          alt=""> -->
+          <img
+          src="https://assets.materialup.com/uploads/16e7d0ed-140b-4f86-9b7e-d9d1c04edb2b/preview.png"
+          alt="">
+        <h4>Your Bag is empty!</h4>
+        <h6>Add Service to it now</h6>
+        <ion-button routerLink="/data" shape="round" class="btn btn-primary" color="dark">ADD Services</ion-button>
+      </div>
+    </div> 
+  </ion-card>
+</ng-container>
+
+<ion-content>
+  <div *ngIf="products.length !=0">
+    <div class="container1">
+
+
+      <ion-card *ngFor="let item of products; let i = index">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="col">
+              <img  class="img" style="width: 120px;" src="{{item.image}}" alt="">
+              <ion-item class="item"><ion-icon color="success" name="star"></ion-icon>
+                <ion-icon color="success" name="star"></ion-icon>
+                <ion-icon color="success" name="star"></ion-icon>
+                <ion-icon color="success" name="star-half"></ion-icon>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <h4>{{item.service}}</h4>
+              <p class="padding">{{item.offer}}</p>
+              <ion-badge class="padding"class="dis" color="warning">{{item.discount}} </ion-badge>
+
+              <h4 class="padding">{{item.rate}}</h4>
+              <ion-button color="dark" shape="round" fill="outline" (click)="removeItem(item)" expand="block"><ion-icon name="trash-outline"></ion-icon>Remove </ion-button>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+  
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+<ion-grid> <ion-row><ion-col>
+   <h3><strong>Grand Total :  </strong></h3></ion-col>
+  <ion-col>
+  <h3 class="ion-text-end"><strong>    ${{grandTotal}}</strong></h3></ion-col>
+</ion-row>
+</ion-grid>
+
+  <ion-button color="dark" shape="round" expand="full" >Book Service</ion-button>
+
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/dashbord">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Home</ion-label>
+          <ion-badge>6</ion-badge>
+        </ion-tab-button>
+
+
+<!-- 
+        <ion-tab-button routerLink="/wishlist">
+          <ion-icon name="heart-outline"></ion-icon>
+          <ion-label>Wishlist</ion-label>
+        </ion-tab-button> -->
+
+        <ion-tab-button routerLink="/qr">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          <ion-label>QR</ion-label>
+        </ion-tab-button>
+
+
+
+        <ion-tab-button routerLink="/account">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Account</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="/booked">
+          <ion-icon name="bag-outline"></ion-icon>
+          <ion-label>Bag</ion-label>
+          <ion-badge>{{totalItem}}</ion-badge>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

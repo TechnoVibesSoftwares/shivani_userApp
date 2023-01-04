@@ -1,0 +1,69 @@
+
+<ion-content>
+   <form> 
+ 
+  
+      <div id="bg">
+        <ion-fab vertical="top" edge horizontal="end"   id="bgh">
+          <ion-fab-button color="white" routerLink="/dashbord">
+            <ion-icon name="close-outline" color="medium"></ion-icon>
+          </ion-fab-button>
+        </ion-fab><br><br>
+      </div>
+      <ion-list lines="none" class="ion-margin">
+        <ion-list-header> Login !</ion-list-header>
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email"  required [(ngModel)]="loginForm.email" name="email"></ion-input>
+        </ion-item><br>
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"  required [(ngModel)]="loginForm.password" name="password"></ion-input>
+        </ion-item>
+        <ion-text color="danger"><p class="ion-margin-horizontal"  id="open-modal">Forgot Password?</p></ion-text><br>
+        <ion-grid>
+         <ion-row><ion-col>
+          <ion-button shape="round" strong="true" class="ionbtn1" color="medium" expand="block" routerLink="/home">
+            SING UP
+           <!-- routerLink="/tabs"  -->
+           <ion-icon name="log-in" slot="end"></ion-icon>
+         </ion-button></ion-col>
+        <ion-col>
+         <ion-button shape="round" strong="true" class="ionbtn" color="dark"  expand="block" (click)="login()">
+          LOG IN
+         <!-- routerLink="/tabs"  -->
+         <ion-icon name="log-in" slot="end"></ion-icon>
+       </ion-button></ion-col>
+      </ion-row> </ion-grid>
+      </ion-list>
+ 
+    
+    
+  
+ </form> 
+</ion-content>
+
+<ion-modal #modal trigger="open-modal">
+  <ng-template><ion-toolbar><ion-button (click)="cancel()" size="large" fill="clear" color="dark" slot="end"><ion-icon name="close"></ion-icon></ion-button></ion-toolbar>
+    <ion-content >
+      
+      <ion-card class="ngcard">
+      <form>
+        <ion-item lines="full" >
+        <ion-icon class="icon" name="lock-open" color="warning"></ion-icon></ion-item><br><br>
+        <ion-item lines="full" class="item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input  type="email"  required [(ngModel)]="logForm.emailId" name="emailId" ></ion-input></ion-item><br>
+        <ion-item lines="full" class="item">
+        <ion-label position="floating">New Password</ion-label>
+        <ion-input type="password"  required [(ngModel)]="logForm.password" name="password" ></ion-input></ion-item><br>
+        <ion-item lines="full" class="item">
+        <ion-label position="floating"> Confirm Password</ion-label>
+        <ion-input type="password"  required [(ngModel)]="logForm.confirmpassword" name="confirmpassword" ></ion-input></ion-item><br>
+<ion-button type="submit" color="dark"  shape="round" expand="block" (click)="forgotPassword()">Submit</ion-button>
+</form>
+</ion-card> 
+
+    </ion-content>
+  </ng-template>
+</ion-modal> 

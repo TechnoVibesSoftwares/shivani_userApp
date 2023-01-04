@@ -1,0 +1,235 @@
+<ion-header>
+  <ion-toolbar class="tool">
+
+    <ion-menu-button main="menu" slot="start"></ion-menu-button>
+
+    <ion-title></ion-title>
+
+    <ion-avatar slot="end" routerLink="/data"><img src="https://img.freepik.com/premium-vector/portrait-caucasian-woman-avatar-female-person-vector-icon-adult-flat-style-headshot_605517-26.jpg?w=2000"> </ion-avatar>
+  
+
+    <ion-avatar slot="end" routerLink="/data"><img src="https://img.freepik.com/premium-vector/brunette-man-avatar-portrait-young-guy-vector-illustration-face_217290-1035.jpg?w=2000"></ion-avatar>
+
+
+
+
+
+
+  </ion-toolbar>
+  <ion-searchbar color="medium"></ion-searchbar>
+</ion-header>
+
+
+
+<ion-content>
+<!-- <ion-grid>
+  <ion-row color="light">
+    <ion-col ><ion-button class="btnimg" expand="block" color="light" routerLink="/data">Female<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQKas-CEHAd76OTIdM21mMChZeUwZr2aKTrg&usqp=CAU"></ion-button></ion-col>
+    <ion-col ><ion-button class="btnimg" expand="block" color="light" routerLink="/data">Male <img src="https://thumb.ac-illust.com/b4/b4655d4fbe54c31b5fa095a031e22de7_w.jpeg"></ion-button></ion-col>
+  </ion-row>
+</ion-grid> -->
+
+  <ion-grid class="ion-margin-top">
+    <ion-item class="line" lines="none" color="light">
+      <ion-label class="title">SILVER</ion-label>
+      <ion-button slot="end" size="small" shape="round" color="primary">View all</ion-button>
+    </ion-item>
+    <ion-row>
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let item of imageData">
+          <ion-card routerLink="/data" class="bgCard" >
+            
+            <ion-card-content>
+              <img class="cardimages" [src]="item?.image" />
+         
+          
+              <ion-label>{{item.name}}</ion-label><br><br>
+            <ion-label>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star-half"></ion-icon></ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-margin-top">
+    <ion-item  class="line"lines="none" color="light">
+      <ion-label class="title">GOLD</ion-label>
+      <ion-button slot="end" size="small" shape="round" color="primary">View all</ion-button>
+    </ion-item>
+    <ion-row>
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let item of imageData">
+          <ion-card routerLink="/data" class="bgCard1" >
+           
+            <ion-card-content>
+              <img class="cardimages" [src]="item?.image" />
+              <ion-label>{{item.name}}</ion-label><br><br>
+            <ion-label>
+           
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star-half"></ion-icon></ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid> 
+
+  <ion-grid class="ion-margin-top">
+    <ion-item class="line" lines="none" color="light">
+      <ion-label class="title">PLATINUM</ion-label>
+      <ion-button slot="end" size="small" shape="round" color="primary">View all</ion-button>
+    </ion-item>
+    <ion-row>
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let item of imageData">
+          <ion-card routerLink="/data" class="bgCard2" >
+           
+            <ion-card-content>
+              <img class="cardimages" [src]="item?.image" />
+              <ion-label>{{item.name}}</ion-label><br><br>
+            
+            <ion-label>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star"></ion-icon>
+              <ion-icon color="success" name="star-half"></ion-icon></ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-item class="line" lines="none" color="light">
+    <ion-label class="title"> CATOGERY</ion-label>
+  </ion-item>
+  <ion-slides routerLink="/data" #slider loop="true" pager="true" [options]="slideOptions" (ionSlideTouchEnd)="slideChanged()">
+     
+    <ion-slide *ngFor="let user of imgData">
+
+          <ion-card >
+            <ion-label class="lab">{{user.label}}</ion-label>
+            <img class="img" src="{{user.img}}">
+         
+          </ion-card>
+          </ion-slide>
+          </ion-slides>
+  
+
+
+  <ion-item class="line" lines="none" color="light">
+    <ion-label class="title">RECOMENDATIONS</ion-label>
+  </ion-item>
+
+  <ion-slides routerLink="/data" #slider loop="true" pager="true" [options]="slideOptions" (ionSlideTouchEnd)="slideChanged()">
+     
+    <ion-slide *ngFor="let user of itemData">
+
+          <ion-card >
+            <img class="img" src="{{user.store}}">
+          
+          </ion-card>
+          </ion-slide>
+          </ion-slides>
+       
+ 
+
+
+          <ion-item class="line" lines="none" color="light">
+            <ion-label class="title">TOP STROES</ion-label>
+          </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="icon">
+<img class="iconss" src="data:image/png;base64,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" >
+     <ion-label> store1 </ion-label></ion-col >
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6CrSTRUp0c980fxyYTfImdqPGSZ5m1xzhQ&usqp=CAU" >
+        <ion-label> store2 </ion-label> </ion-col>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHoA7SIQvYORd9A62eVAxsjVrrCTiqFegkA&usqp=CAU" >
+        <ion-label> store3 </ion-label> </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-PiivhKc4lsV_qLGQ2s7_QT-afnWgzLyUA&usqp=CAU" >
+        <ion-label> store4 </ion-label> </ion-col>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQphWKHc9b8N1prFfoOBvcZ58lmtFU_2RVWkA&usqp=CAU" >
+        <ion-label> store5 </ion-label> </ion-col>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUARlDITbCNyQft4oGc_FWTf8FiEC_WivkQ&usqp=CAU" >
+        <ion-label> store6 </ion-label> </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3F_8hWfPPCJC6o2C9aNDRdAOty0PbtKhdDg&usqp=CAU">
+        <ion-label> store7 </ion-label>
+      </ion-col>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6_u3kk3A0vZ5Ie9jx3INyOBwHTJagancuUw&usqp=CAU">
+        <ion-label> store8 </ion-label>
+      </ion-col>
+      <ion-col class="icon">
+        <img class="iconss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GdXOjDNs-nAoB7UO7YXLUazjw-Wl1Ss34A&usqp=CAU">
+        <ion-label> store9 </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ 
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/dashbord">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+
+<!-- 
+    <ion-tab-button routerLink="/wishlist">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>Wishlist</ion-label>
+    </ion-tab-button> -->
+
+    <ion-tab-button routerLink="/qr">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-label>QR</ion-label>
+    </ion-tab-button>
+
+
+
+    <ion-tab-button routerLink="/account">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/booked">
+      <ion-icon name="bag-outline"></ion-icon>
+      <ion-label>Bag</ion-label>
+      <ion-badge>{{totalItem}}</ion-badge>
+
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
+</ion-footer>

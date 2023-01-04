@@ -1,0 +1,7 @@
+{
+  "name": "singUp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

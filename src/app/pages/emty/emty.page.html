@@ -1,0 +1,75 @@
+<!-- -- <ion-content>
+<div *ngIf="status">
+  <ion-text *ngIf="status" color="success">online</ion-text>
+
+</div>
+
+
+<ion-modal [isOpen]="status == false">
+  <ng-template>
+    <ion-content>
+      <app-errors [model]="model" (retry)="checkStatus($event)"></app-errors>
+       
+    </ion-content>
+  </ng-template>
+</ion-modal> 
+</ion-content> 
+
+
+  <ion-header translucent>
+   
+  </ion-header>
+  <ion-content fullscreen>
+    <ion-card  >
+      -<img src="https://www.shutterstock.com/image-illustration/modern-interior-design-salon-3d-600w-602081057.jpg" width="100%" height="30%"/>--
+      <ion-card-header>
+        <ion-card-subtitle>  </ion-card-subtitle>
+        <ion-card-title>FRANSALON  </ion-card-title>
+      </ion-card-header><br>
+      <ion-card-content>
+       
+           
+     <ion-button color="dark" expand="block" routerLink="/dashbord">FEMALE</ion-button> <br>
+   
+    
+      <ion-button type="submit" color="dark" expand="block"  fill="outline" routerLink="/dashbord" > MALE</ion-button>
+ 
+ 
+      </ion-card-content>
+   
+    </ion-card>
+  </ion-content> -->
+
+
+
+  <ion-content>
+    <!-- <ion-button  class="btnimg"  ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQKas-CEHAd76OTIdM21mMChZeUwZr2aKTrg&usqp=CAU"></ion-button>
+    <ion-button class="btnimg" (click)=" filtercategory($event)"><img src="https://thumb.ac-illust.com/b4/b4655d4fbe54c31b5fa095a031e22de7_w.jpeg"></ion-button>
+    <ion-grid>
+      <ion-row >
+        <ion-col >
+      <ion-card *ngFor="let item of UserData">
+        <img src="{{item.image}}">
+        <ion-card-content>
+          <ion-card-title>{{item.service}}</ion-card-title>
+          <ion-card-subtitle>{{item.rate}}</ion-card-subtitle>
+          <ion-card-title>
+            <ion-badge class="dis" color="warning">{{item.discount}} </ion-badge>
+          </ion-card-title>
+          <ion-card-title class="offer">{{item.offer}}</ion-card-title>
+          <ion-button fill="outline" (click)="addtocart(item)">ADD Service</ion-button>
+        </ion-card-content>
+      </ion-card> 
+    </ion-col>
+    </ion-row> 
+     </ion-grid> --> 
+   <ion-label>Data From Server : {{todos}}</ion-label>
+    <ion-button (click)="afterLoggedIn()">Click Me</ion-button>
+<form >
+  <ion-input placeholder="email" name="emailId" [(ngModel)]="data.emailId"></ion-input><br>
+  <ion-button (click)="doSubmitForm()">submit</ion-button><br>
+
+</form>
+
+
+  </ion-content>

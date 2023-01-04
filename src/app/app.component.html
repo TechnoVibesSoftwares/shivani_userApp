@@ -1,0 +1,60 @@
+<!-- <<ion-app *ngIf="status"> -->
+<ion-app *ngIf="status">
+
+
+
+  <ion-menu menuId="main-menu" contentId="main" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-thumbnail slot="start"><img alt="Silhouette of a person's head"  src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png"></ion-thumbnail>
+        <ion-title>User</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="contenet">
+      <ion-card>
+        <ion-list>
+          <ion-menu-toggle>
+
+        <ion-item routerLink="/dashbord"><ion-icon name="home" slot="end"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+        <ion-item routerLink="/refer-earn">
+          <ion-icon name="wallet" slot="end"></ion-icon>
+          <ion-label>Refer & Earn</ion-label>
+        </ion-item></ion-menu-toggle>
+      <!-- <ion-menu-toggle>
+        <ion-item routerLink="/qr"><ion-icon name="qr-code" slot="start"></ion-icon>
+          <ion-label>QR Viewer</ion-label>
+        </ion-item>
+      </ion-menu-toggle> -->
+    <ion-menu-toggle>
+        <ion-item routerLink="/invoice"><ion-icon name="newspaper-sharp" slot="end"></ion-icon>
+          <ion-label>Invoice</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    <ion-menu-toggle>
+        <ion-item routerLink="/feedback"><ion-icon name="clipboard-outline" slot="end"></ion-icon>
+          <ion-label>Feedback</ion-label>
+        </ion-item ></ion-menu-toggle>
+      
+      </ion-list>
+    </ion-card>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+   
+
+
+  
+</ion-app>
+<ion-modal id="container" [isOpen]="status == false">
+  <ng-template>
+    <ion-content>
+       <app-errors [model]="model" (retry)="checkStatus($event)"></app-errors> 
+       
+    </ion-content>
+  </ng-template>
+  </ion-modal>

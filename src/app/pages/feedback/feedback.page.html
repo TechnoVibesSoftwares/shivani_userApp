@@ -1,0 +1,19 @@
+<ion-toolbar color="hh">    <ion-menu-button main="menu"slot="start" ></ion-menu-button>
+</ion-toolbar>
+
+<div class="div1">
+<ion-card>
+  <h2>Feedback</h2>
+  <h5>How do you feel about the support you service ?</h5>
+ <ion-item color="medium"><ion-radio  color="light"></ion-radio>It was Great!<img slot="end" src="https://cdn-icons-png.flaticon.com/512/4160/4160724.png" width="50px"></ion-item>
+ <ion-item color="medium"><ion-radio color="light"></ion-radio>It was Good! <img slot="end" src="https://cdn-icons-png.flaticon.com/512/1933/1933691.png" width="50px"></ion-item>
+ <ion-item color="medium" ><ion-radio  color="light"></ion-radio>I am Disappointed! <img slot="end" src="https://cdn-icons-png.flaticon.com/512/725/725099.png" width="50px"></ion-item>
+ <h5>Do you have any additional Feedback for us ?</h5>
+ <ion-item counter="true">
+  <ion-label position="floating">Massage</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+<ion-button color="success" shape="round" (click)="presentAlert()">Send Feedback</ion-button>
+  </ion-card>
+</div>
+ 

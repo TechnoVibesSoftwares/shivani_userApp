@@ -1,0 +1,104 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+
+
+    <ion-title> My Account</ion-title>
+
+    <ion-button id="open-modal" (click)=" setOpen(true)" slot="end"  fill="outline">Edit<ion-icon  name="pencil-sharp" slot="end"></ion-icon></ion-button>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <div class="container">
+    <div class="outer" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+      <div class="inner" (click)="openOptionSelection()">
+        <ion-icon name="camera" class="camera-icon"></ion-icon>
+      </div>
+    </div>
+  </div>
+   
+  
+
+
+  <div *ngFor="let item of items">
+  <P>{{ item.name }}</P>
+  <p>{{ item.email }}</p>
+  <p>{{ item.dob }}</p>
+  <p>{{item. gender }}</p>
+  <p>{{ item.mobile }}</p></div>
+
+<p>{{name}}</p>
+
+
+
+  <ion-modal trigger="open-modal" [isOpen]="isModalOpen" (willDismiss)="onWillDismiss($event)" >
+    <!-- (willDismiss)="onWillDismiss($event)" -->
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="update(id)" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form  >
+        <div >
+          
+          <ion-input type="text" name="name"  [(ngModel)]="edit.name"></ion-input><br>
+          <ion-input type="text" name="email"  [(ngModel)]="edit.email"></ion-input><br>
+          <ion-input type="text" name="dob"  [(ngModel)]="edit.dob"></ion-input><br>
+          <ion-input type="text" name="gender"  [(ngModel)]="edit.gender"></ion-input><br>
+          <ion-input type="text" name="mobile"  [(ngModel)]="edit.mobile"></ion-input><br>
+
+        </div></form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content> 
+
+<ion-tabs>
+  <ion-button color="dark" (click)="logout()">logout</ion-button>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/dashbord">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+
+    
+    <!-- <ion-tab-button routerLink="/wishlist">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>Wishlist</ion-label>
+    </ion-tab-button> -->
+
+    <ion-tab-button routerLink="/qr">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-label>QR</ion-label>
+    </ion-tab-button>
+
+ 
+
+    <ion-tab-button routerLink="/account">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/booked">
+      <ion-icon name="bag-outline"></ion-icon>
+      <ion-label>Bag</ion-label>
+      <ion-badge>{{totalItem}}</ion-badge>
+
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

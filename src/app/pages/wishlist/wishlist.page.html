@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+
+    <ion-title>wishlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><div class="ok">
+  <ion-label >No List....</ion-label>
+</div> 
+<ion-label>Data From Server : {{todos}}</ion-label>
+<ion-button (click)="afterLoggedIn()">Click Me</ion-button>
+
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/dashbord">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+
+    
+    <ion-tab-button routerLink="/wishlist">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>Wishlist</ion-label>
+     
+
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/qr">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-label>QR</ion-label>
+    </ion-tab-button>
+
+
+
+    <ion-tab-button routerLink="/account">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/login">
+      <ion-icon name="bag-outline"></ion-icon>
+      <ion-label>Bag</ion-label>
+      <ion-badge>{{totalItem}}</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
